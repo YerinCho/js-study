@@ -1,4 +1,5 @@
 import {lottoTemplate} from "./templates.js"
+import {LOTTO} from "./constants.js";
 
 export function Lottos() {
     const $lottoList = document.querySelector("#lottos");
@@ -12,8 +13,8 @@ export function Lottos() {
 
     const generateLotto = () => {
         let lotto = [];
-        while (lotto.length !== 6) {
-            let randomNumber = Math.floor(Math.random() * 45 + 1);
+        while (lotto.length !== LOTTO.LENGTH) {
+            let randomNumber = Math.floor(Math.random() * LOTTO.MAX_NUMBER + LOTTO.MIN_NUMBER);
             if (!lotto.includes(randomNumber)) {
                 lotto.push(randomNumber);
             }
@@ -22,7 +23,6 @@ export function Lottos() {
     };
 
     const render = lotto => {
-        console.log(lotto);
         const template = lottoTemplate(lotto);
         $lottoList.insertAdjacentHTML("beforeEnd", template);
     }

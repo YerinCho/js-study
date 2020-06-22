@@ -1,8 +1,10 @@
+import {EVENT_TYPE, LOTTO} from "./constants.js";
+
 export function LottoInput({onAdd}) {
     const $lottoRound = document.querySelector("#input-lotto-round");
     const $lottoCash = document.querySelector("#input-cash-amount");
     const $lottoBuyButton = document.querySelector("#buy-button");
-    $lottoBuyButton.addEventListener("click", event => this.inputLotto(event));
+    $lottoBuyButton.addEventListener(EVENT_TYPE.CLICK, event => this.inputLotto(event));
 
     this.inputLotto = event => {
         const round = $lottoRound.value;
@@ -16,17 +18,17 @@ export function LottoInput({onAdd}) {
         if (!isCashValid(cash)) {
             return alert("금액 입력 오류! 로또 하나의 가격은 1000원입니다.");
         }
-        onAdd(round, cash /  1000);
+        onAdd(round, cash / LOTTO.MIN_MONEY);
     };
 
     const isRoundValid = input => {
         const round = parseInt(input);
-        return isFinite(round) && round > 0;
+        return isFinite(round) && round >= LOTTO.MIN_ROUND;
     };
 
     const isCashValid = input => {
         const cash = parseInt(input);
-        return isFinite(cash) && cash >= 1000;
+        return isFinite(cash) && cash >= LOTTO.MIN_MONEY;
     };
 
 }
