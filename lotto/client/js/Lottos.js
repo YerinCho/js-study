@@ -1,7 +1,7 @@
 import {lottoTemplate} from "./templates.js"
 import {LOTTO} from "./constants.js";
 
-export function Lottos() {
+function Lottos() {
     const $lottoList = document.querySelector("#lottos");
     const $lottoQuantity = document.querySelector("#lotto-quantity");
 
@@ -30,3 +30,4 @@ export function Lottos() {
     }
 
 }
+export default Lottos;

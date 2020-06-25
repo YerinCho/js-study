@@ -1,6 +1,6 @@
-import {LottoInput} from "./LottoInput.js";
-import {Lottos} from "./Lottos.js";
-import {WinningLotto} from "./WinningLotto.js";
+import Lottos from "./Lottos.js";
+import WinningLotto from "./WinningLotto.js";
+import LottoInput from "./LottoInput.js";
 
 function LottoApp() {
     const baseUrl = "http://localhost:8000/lotto/";

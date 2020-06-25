@@ -1,6 +1,6 @@
 import {winningLottoTemplate} from "./templates.js"
 
-export function WinningLotto() {
+function WinningLotto() {
     const $winningLotto = document.querySelector("#lotto-result");
 
     this.setWinningLotto = winningLotto => {
@@ -11,3 +11,4 @@ export function WinningLotto() {
         $winningLotto.innerHTML = winningLottoTemplate(winningLotto);
     }
 }
+export default WinningLotto;

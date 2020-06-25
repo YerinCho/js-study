@@ -1,6 +1,6 @@
 import {EVENT_TYPE, LOTTO} from "./constants.js";
 
-export function LottoInput({onAdd}) {
+function LottoInput({onAdd}) {
     const $lottoRound = document.querySelector("#input-lotto-round");
     const $lottoCash = document.querySelector("#input-cash-amount");
     const $lottoBuyButton = document.querySelector("#buy-button");
@@ -32,3 +32,4 @@ export function LottoInput({onAdd}) {
     };
 
 }
+export default LottoInput;
