@@ -3,18 +3,20 @@ import {LOTTO} from "./constants.js";
 
 export function Lottos() {
     const $lottoList = document.querySelector("#lottos");
+    const $lottoQuantity = document.querySelector("#lotto-quantity");
 
     this.setLottos = ticketCount => {
         $lottoList.innerHTML = "";
         for (let i = 0; i < ticketCount; i++) {
             render(generateLotto());
         }
+        $lottoQuantity.innerText = ticketCount;
     };
 
     const generateLotto = () => {
-        let lotto = [];
+        const lotto = [];
         while (lotto.length !== LOTTO.LENGTH) {
-            let randomNumber = Math.floor(Math.random() * LOTTO.MAX_NUMBER + LOTTO.MIN_NUMBER);
+            const randomNumber = Math.floor(Math.random() * LOTTO.MAX_NUMBER + LOTTO.MIN_NUMBER);
             if (!lotto.includes(randomNumber)) {
                 lotto.push(randomNumber);
             }
@@ -24,7 +26,7 @@ export function Lottos() {
 
     const render = lotto => {
         const template = lottoTemplate(lotto);
-        $lottoList.insertAdjacentHTML("beforeEnd", template);
+        $lottoList.insertAdjacentHTML("beforeend", template);
     }
 
 }

@@ -13,7 +13,7 @@ export function LottoInput({onAdd}) {
             return alert("입력 오류! 입력 오류! 다시 시도해줏매");
         }
         if (!isRoundValid(round)) {
-            return alert("회차 오류! 1이상의 회차를 입");
+            return alert("회차 오류! 1이상의 회차를 입력 ");
         }
         if (!isCashValid(cash)) {
             return alert("금액 입력 오류! 로또 하나의 가격은 1000원입니다.");
